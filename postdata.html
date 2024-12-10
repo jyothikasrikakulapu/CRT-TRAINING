@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick ="postdata()">POST</button>
+    <script>
+        function postdata(){
+            const ns = {}
+            ns.id = prompt("Enter roll no")
+            ns.name = prompt("Enter name")
+            ns.age = prompt("Enter age")
+            ns.dob = prompt("Enter date of birth")
+            const req = new XMLHttpRequest();
+            req.open("POST",'http://localhost:4004/student',true)
+            req.onload = function(){
+                documnet.getElementById('123').innerHTML="Your data is posted!"
+            } 
+            req.send(JSON>stringify(ns))
+    }
+    </script>
+</body>
+</html>
